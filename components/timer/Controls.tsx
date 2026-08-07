@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTimerStore } from '../../store/timerStore';
 import { useTimer } from '../../hooks/useTimer';
 
-export default function Controls({ isIdle }: { isIdle: boolean }) {
+export default function Controls({}: { isIdle: boolean }) {
   const { status } = useTimerStore();
   const { start, interrupt, confirmInterrupt } = useTimer();
   const [showConfirm, setShowConfirm] = useState(false);
