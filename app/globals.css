@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #080808;
+  --bg-pulse: #0E0E0E;
+  --surface: #111111;
+  --surface-rgb: 17 17 17;
+  --border: #1C1C1C;
+  --text-primary: #F0F0F0;
+  --text-secondary: #383838;
+  --text-muted: #1E1E1E;
+  --accent: #F0F0F0;
+  --accent-rgb: 240 240 240;
+  
+  /* transitions apply on all vibe changes */
+  transition: background-color 600ms ease, color 600ms ease;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  /* Prevent scrolling */
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes breath {
+  0% { background-color: var(--bg); }
+  50% { background-color: var(--bg-pulse); }
+  100% { background-color: var(--bg); }
+}
+
+.timer--running {
+  text-shadow: 0 0 40px rgba(var(--accent-rgb), 0.15), 0 0 80px rgba(var(--accent-rgb), 0.07);
+  transition: text-shadow 1s ease;
+}
+
+.breath-animation {
+  animation: breath 8s ease-in-out infinite;
+}
+
+/* Hide scrollbar for settings/log panels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
