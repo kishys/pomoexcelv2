@@ -87,9 +87,14 @@ export default function Home() {
         <div className="flex items-center gap-4">
           <span className="font-mono text-[11px] tracking-[0.1em] text-text-muted">POMO</span>
           {!isIdle && (
-            <motion.div layoutId="time-display-small">
-              {/* Could shrink the clock here if requested, simpler version for now */}
-            </motion.div>
+            <button 
+              onClick={() => useTimerStore.getState().setStatus('idle')}
+              className="flex items-center gap-1 text-text-muted hover:text-text-primary transition-colors text-[11px] font-mono tracking-wider"
+              title="Back to Clock"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+              BACK
+            </button>
           )}
         </div>
         

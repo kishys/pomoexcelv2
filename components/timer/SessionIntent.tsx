@@ -7,7 +7,7 @@ export default function SessionIntent() {
   const [isEditing, setIsEditing] = useState(false);
   const [localIntent, setLocalIntent] = useState(sessionIntent);
   const inputRef = useRef<HTMLInputElement>(null);
-  
+
   const isRunning = status === 'running';
 
   useEffect(() => {
@@ -51,7 +51,7 @@ export default function SessionIntent() {
 
   if (!isEditing && isRunning) {
     return (
-      <div 
+      <div
         className="font-sans text-[14px] text-text-secondary cursor-text group"
         onClick={() => setIsEditing(true)}
       >
@@ -65,7 +65,7 @@ export default function SessionIntent() {
 
   if (!isEditing && !sessionIntent) {
     return (
-      <div 
+      <div
         className="font-sans text-[14px] italic text-text-muted cursor-text hover:text-text-secondary transition-colors"
         onClick={() => setIsEditing(true)}
       >
@@ -76,7 +76,7 @@ export default function SessionIntent() {
 
   if (!isEditing && sessionIntent) {
     return (
-      <div 
+      <div
         className="font-sans text-[14px] text-text-secondary cursor-text group"
         onClick={() => setIsEditing(true)}
       >
